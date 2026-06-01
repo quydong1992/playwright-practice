@@ -1,0 +1,21 @@
+{
+  "name": "playwright-practice",
+  "version": "1.0.0",
+  "description": "Playwright TypeScript practice project — UI automation, API testing, form validation",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:ui": "npx playwright test --ui",
+    "report": "npx playwright show-report",
+    "test:login": "npx playwright test tests/01-login.spec.ts",
+    "test:form": "npx playwright test tests/02-form.spec.ts",
+    "test:locators": "npx playwright test tests/03-locators.spec.ts",
+    "test:assertions": "npx playwright test tests/04-assertions.spec.ts",
+    "test:navigation": "npx playwright test tests/05-navigation.spec.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
