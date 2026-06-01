@@ -44,16 +44,16 @@ test.describe('Login Page', () => {
     await page.getByLabel('Password').fill(VALID_PASS);
     await page.getByRole('button', { name: 'Login' }).click();
 
-    await expect(page.getByText('Your username is invalid!')).toBeVisible();
+    await expect(page.getByText('Invalid username.')).toBeVisible();
+   await expect(page).toHaveURL(/login/);
   });
 
   test('TC04 - Empty username should show validation', async ({ page }) => {
     await page.getByLabel('Password').fill(VALID_PASS);
     await page.getByRole('button', { name: 'Login' }).click();
 
-    // HTML5 validation prevents submit — username field should be focused
-    const usernameField = page.getByLabel('Username');
-    await expect(usernameField).toBeFocused();
+    await expect(page.getByText('Invalid username.')).toBeVisible();
+   await expect(page).toHaveURL(/login/);
   });
 
   test('TC05 - Successful login then logout should return to login page', async ({ page }) => {
